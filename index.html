@@ -1,0 +1,455 @@
+<!doctype html>
+<html lang="en">
+	
+	<head>
+		<meta charset="utf-8">
+		<title>OOCSS + Sass</title>
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/main.css">
+		<link rel="stylesheet" href="lib/zenburn.css">
+		<script src="lib/jquery.min.js"></script>
+		<script src="js/misc.js"></script>
+	</head>
+	
+	<body>
+		
+		<!-- Any section element inside of this container is displayed as a slide -->
+		<div id="main">
+
+			<section>
+				<div class="mod-page title"><div><div>
+					<h1>OOCSS + Sass</h1>
+					<p>Takeshi Takatsudo (<a href="http://twitter.com/Takazudo">@Takazudo</a>)</p>
+				</div></div></div>
+			</section>
+			
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>OOCSS</h1>
+						<p><img src="imgs/nicolle.png" alt=""></p>
+						<p>Nicole Sullivan</p>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page break c"><div><div>
+						<h1>CSS is too fragile</h1>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>Not Semantic!!</h1>
+						<pre>&lt;a href=&quot;#&quot; class=&quot;<em>blackborder redbg</em>&quot;&gt;Twitter&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;<em>blackborder bluebg</em>&quot;&gt;Facebook&lt;/a&gt;</pre>
+						<div class="mod-btns">
+							<a href="#" class="mod-tw">Twitter</a>
+							<a href="#" class="mod-fb">Facebook</a>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>Classes should be semantic!</h1>
+						<pre>&lt;a href=&quot;#&quot; class=&quot;<em>twitterbtn</em>&quot;&gt;Twitter&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;<em>facebookbtn</em>&quot;&gt;Facebook&lt;/a&gt;</pre>
+						<div class="mod-btns">
+							<a href="#" class="mod-tw">Twitter</a>
+							<a href="#" class="mod-fb">Facebook</a>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>Hum... It's... semantic... yes...</h1>
+						<div class="mod-splitLR">
+							<div class="mod-splitLR-L">
+								<pre>.twitterbtn {
+  <em>border:3px solid #000;</em>
+  <em>padding:10px 20px;</em>
+  <em>color:#fff;</em>
+  <em>border-radius:10px;</em>
+  background:red;
+}</pre>
+              </div>
+              <div class="mod-splitLR-R">
+                <pre>.facebookbtn {
+  <em>border:3px solid #000;</em>
+  <em>padding:10px 20px;</em>
+  <em>color:#fff;</em>
+  <em>border-radius:10px;</em>
+  background:blue;
+}</pre>
+							</div>
+						</div>
+						<div class="mod-btns">
+							<a href="#" class="mod-tw">Twitter</a>
+							<a href="#" class="mod-fb">Facebook</a>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>OOCSS</h1>
+						<pre>&lt;a href=&quot;#&quot; class=&quot;<em>btnbase twitter</em>&quot;&gt;Twitter&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;<em>btnbase facebook</em>&quot;&gt;Facebook&lt;/a&gt;</pre>
+						<div class="mod-btns">
+							<a href="#" class="mod-tw">Twitter</a>
+							<a href="#" class="mod-fb">Facebook</a>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>Extend base with skin.<br>Reuse code.</h1>
+						<div class="mod-splitLR">
+							<div class="mod-splitLR-L">
+								<pre>.btnbase {
+  <em>border:3px solid #000;</em>
+  <em>padding:10px 20px;</em>
+  <em>color:#fff;</em>
+  <em>border-radius:10px;</em>
+}</pre>
+							</div>
+							<div class="mod-splitLR-R">
+								<pre>.twitter {
+  background:red;
+}
+.facebook {
+  background:blue;
+}</pre>
+							</div>
+						</div>
+						<div class="mod-btns">
+							<a href="#" class="mod-tw">Twitter</a>
+							<a href="#" class="mod-fb">Facebook</a>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>Again. Sematic? Humm...</h1>
+						<pre>&lt;a href=&quot;#&quot; class=&quot;<em>btnbase twitter</em>&quot;&gt;Twitter&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;<em>btnbase facebook</em>&quot;&gt;Facebook&lt;/a&gt;</pre>
+						<div class="mod-btns">
+							<a href="#" class="mod-tw">Twitter</a>
+							<a href="#" class="mod-fb">Facebook</a>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>This is "Semantic". But...</h1>
+						<pre>&lt;a href=&quot;#&quot; class=&quot;<em>twitterbtn</em>&quot;&gt;Twitter&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;<em>facebookbtn</em>&quot;&gt;Facebook&lt;/a&gt;</pre>
+						<div class="mod-btns">
+							<a href="#" class="mod-tw">Twitter</a>
+							<a href="#" class="mod-fb">Facebook</a>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<div style="font-size:1.2em">
+							<h1>Why OOCSS?</h1>
+							<p>Because CSS is too far from perfect.<br>Almost impossible to do everything well.<br>within itself.</p>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<div style="font-size:1.2em">
+							<h1>What Sass resolves</h1>
+							<p>extending classes in pre-CSS layer</p>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>mixin</h1>
+						<pre>&lt;a href=&quot;#&quot; class=&quot;<em>twitterbtn</em>&quot;&gt;Twitter&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;<em>facebookbtn</em>&quot;&gt;Facebook&lt;/a&gt;</pre>
+						<div style="height:10px"></div>
+						<div class="mod-splitLR">
+							<div class="mod-splitLR-L">
+								<pre>@mixin btnbase {
+  border:3px solid #000;
+  padding:10px 20px;
+  color:#fff;
+  border-radius:10px;
+}</pre>
+							</div>
+							<div class="mod-splitLR-R">
+						<pre>.twitterbtn {
+  <em>@include btnbase;</em>
+  background:red;
+}
+.facebookbtn {
+  <em>@include btnbase;</em>
+  background:blue;
+}</pre>
+							</div>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1>extend</h1>
+						<pre>&lt;a href=&quot;#&quot; class=&quot;<em>twitterbtn</em>&quot;&gt;Twitter&lt;/a&gt;
+&lt;a href=&quot;#&quot; class=&quot;<em>facebookbtn</em>&quot;&gt;Facebook&lt;/a&gt;</pre>
+						<div style="height:10px"></div>
+						<div class="mod-splitLR">
+							<div class="mod-splitLR-L">
+								<pre>.btnbase {
+  border:3px solid #000;
+  padding:10px 20px;
+  color:#fff;
+  border-radius:10px;
+}</pre>
+							</div>
+							<div class="mod-splitLR-R">
+						<pre>.twitterbtn {
+  <em>@extend .btnbase;</em>
+  background:red;
+}
+.facebookbtn {
+  <em>@extend .btnbase;</em>
+  background:blue;
+}</pre>
+							</div>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page break c"><div><div>
+						<div><img src="imgs/extending.png" alt=""></div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1 style="font-size:1.4em">Tips. extend is better than mixin</h1>
+						<div class="mod-splitLR" style="font-size:.8em">
+							<div class="mod-splitLR-L">
+								<pre>/* mixin result */
+
+.twitterbtn {
+  <em>border: 3px solid #000;</em>
+  <em>padding: 10px 20px;</em>
+  <em>color: #fff;</em>
+  <em>border-radius: 10px;</em>
+  background: red; }
+
+.facebookbtn {
+  <em>border: 3px solid #000;</em>
+  <em>padding: 10px 20px;</em>
+  <em>color: #fff;</em>
+  <em>border-radius: 10px;</em>
+  background: blue; }</pre>
+							</div>
+							<div class="mod-splitLR-R">
+								<pre>/* extend result */
+
+.btnbase, .twitterbtn, .facebookbtn {
+  <em>border: 3px solid #000;</em>
+  <em>padding: 10px 20px;</em>
+  <em>color: #fff;</em>
+  <em>border-radius: 10px;</em> }
+
+.twitterbtn {
+  background: red; }
+
+.facebookbtn {
+  background: blue; }</pre>
+							</div>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1 class="ex-l">Conclusion</h1>
+						<ul>
+							<li>CSS is too fragile. Hard to maintain.</li>
+							<li>OOCSS helps it, using multiple classes.</li>
+							<li>Sass does it pre-CSS layer.</li>
+							<li>THIS IS WHY SASS ROCKS!</li>
+						</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<div class="mod-page break c"><div><div>
+						<h1>+α</h1>
+						<p>silent class (Sass3.2)</p>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1 style="font-size:1.4em">Abstract class as silent class</h1>
+						<div class="mod-splitLR">
+							<div class="mod-splitLR-L">
+								<pre><em>%btnbase</em> {
+  border:3px solid #000;
+  padding:10px 20px;
+  color:#fff;
+  border-radius:10px;
+}</pre>
+							</div>
+							<div class="mod-splitLR-R">
+						<pre>.twitterbtn {
+  <em>@extend %btnbase;</em>
+  background:red;
+}
+.facebookbtn {
+  <em>@extend %btnbase;</em>
+  background:blue;
+}</pre>
+							</div>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1 style="font-size:1.3em">Silent classes don't appear in CSS</h1>
+						<div class="mod-splitLR" style="font-size:.8em">
+							<div class="mod-splitLR-L">
+								<pre>/* extend result */
+
+<em>.btnbase,</em> .twitterbtn, .facebookbtn {
+  border: 3px solid #000;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 10px; }
+
+.twitterbtn {
+  background: red; }
+
+.facebookbtn {
+  background: blue; }</pre>
+							</div>
+							<div class="mod-splitLR-R">
+								<pre>/* with silent */
+
+.twitterbtn, .facebookbtn {
+  border: 3px solid #000;
+  padding: 10px 20px;
+  color: #fff;
+  border-radius: 10px; }
+
+.twitterbtn {
+  background: red; }
+
+.facebookbtn {
+  background: blue; }</pre>
+							</div>
+						</div>
+					</div></div></div>
+				</section>
+			</section>
+
+
+			<section>
+				<section>
+					<div class="mod-page plain c"><div><div>
+						<h1 class="ex-l">Learn more from</h1>
+						<ul>
+
+<li><a href="http://www.slideshare.net/stubbornella/object-oriented-css">
+Object Oriented CSS</a></li>
+
+<li><a href="https://speakerdeck.com/u/anotheruiguy/p/sass-32-silent-classes">
+Sass 3.2: Silent Classes // Speaker Deck</a></li>
+						</ul>
+					</div></div></div>
+				</section>
+			</section>
+
+		</div>
+
+		<div class="mod-timer">999</div>
+		
+		<aside class="controls">
+			<a class="left" href="#">&#x25C4;</a>
+			<a class="right" href="#">&#x25BA;</a>
+			<a class="up" href="#">&#x25B2;</a>
+			<a class="down" href="#">&#x25BC;</a>
+		</aside>
+
+		<!-- Displays presentation progress, max value changes via JS to reflect # of slides -->
+		<div class="progress"><span></span></div>
+		
+		<script src="js/reveal.js"></script>
+		<script src="lib/highlight.js"></script>
+		<script>
+			Reveal.initialize({
+				// Display controls in the bottom right corner
+				controls: true,
+
+				// Display a presentation progress bar
+				progress: true,
+
+				// Apply a 3D roll to links on hover
+				rollingLinks: true,
+
+				// Styling themes, only affects transitions for now
+				theme: 'default' // default/concave/linear
+			});
+
+			hljs.initHighlightingOnLoad();
+		</script>
+
+
+	</body>
+</html>
